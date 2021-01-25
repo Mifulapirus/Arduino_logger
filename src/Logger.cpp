@@ -1,3 +1,7 @@
+#ifndef SPIFFS
+    #include <SPIFFS.h>
+#endif // !SPIFFS
+
 #include <logger.h>
 
 
