@@ -19,8 +19,7 @@ bool initFS() {
 bool initLogger(bool debug=true) {
   _debug = debug;
   return initFS();
-}
-
+} 
 
 void printLogPaths(){
   if (LOG_TO_FILE) {
