@@ -9,5 +9,6 @@ bool initFS();
 bool logger(String stuff);
 String clearCurrentLogFile();
 void printLogPaths();
+bool initLogger(bool debug=true);
 
 #endif
