@@ -1,8 +1,15 @@
 #include <logger.h>
 
+<<<<<<< HEAD
+=======
+#ifndef SPIFFS
+  #include <SPIFFS.h>
+#endif // !SPIFFS
+
+>>>>>>> ebea1428e237ee08318e2595a2720de6b024d7a8
 #define DBG_OUTPUT_PORT Serial
 #define VERSION 0.1
-#define LOG_TO_FILE false
+#define LOG_TO_FILE true
 #define LOG_FILE "/log.txt"
 #define CURRENT_LOG_FILE "/current_log.txt"
 
