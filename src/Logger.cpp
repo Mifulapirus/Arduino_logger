@@ -10,11 +10,17 @@
 #define LOG_FILE "/log.txt"
 #define CURRENT_LOG_FILE "/current_log.txt"
 
-bool DEBUG = true;
+bool _debug = true;
 bool initFS() {
   if (SPIFFS.begin()) return true;
   else return false;
 }
+
+bool initLogger(bool debug=true) {
+  _debug = debug;
+  return initFS();
+}
+
 
 void printLogPaths(){
   if (LOG_TO_FILE) {
@@ -31,7 +37,7 @@ void printLogPaths(){
  * @return void
  ***************************/
 bool logger(String data){
- if(DEBUG){
+ if(_debug){
     //Print data via Serial port
     DBG_OUTPUT_PORT.println(String(millis()) + "  " + data);
     
