@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 #include <FS.h>
+#include <SPIFFS.h>
 
 bool initFS();
 bool logger(String stuff);

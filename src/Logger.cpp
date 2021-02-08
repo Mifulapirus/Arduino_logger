@@ -1,4 +1,8 @@
 #include <logger.h>
+#ifndef SPIFFS
+  #include <FS.h>
+#endif // !SPIFFS
+
 
 #define DBG_OUTPUT_PORT Serial
 #define VERSION 0.1
