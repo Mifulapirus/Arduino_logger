@@ -1,6 +1,6 @@
 {
     "name": "Logger",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "A Logger library to help you logging to files and Serial port simultaneously",
     "keywords": "logger, loging, log, ESP, nodemcu, arduino",
     "repository":
