@@ -1,12 +1,12 @@
 {
     "name": "Logger",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A Logger library to help you logging to files and Serial port simultaneously",
     "keywords": "logger, loging, log, ESP, nodemcu, arduino",
     "repository":
     {
       "type": "git",
-      "url": "https://github.com/Mifulapirus/ESP_libraries.git"
+      "url": "https://github.com/Mifulapirus/Arduino_logger"
     },
     "authors":
     [
