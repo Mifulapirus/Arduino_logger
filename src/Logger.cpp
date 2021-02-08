@@ -16,7 +16,7 @@ bool initFS() {
   else return false;
 }
 
-bool initLogger(bool debug=true) {
+bool initLogger(bool debug) {
   _debug = debug;
   return initFS();
 } 
