@@ -11,4 +11,7 @@ String clearCurrentLogFile();
 void printLogPaths();
 bool initLogger(bool debug);
 
+bool LOG_TO_SERIAL;
+bool LOG_TO_FILE;
+
 #endif
