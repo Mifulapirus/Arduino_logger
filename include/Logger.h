@@ -5,8 +5,8 @@
     #include <FS.h>
     #include <SPIFFS.h>
 
-    global bool LOG_TO_SERIAL = true;
-    global bool LOG_TO_FILE = false;
+    extern bool LOG_TO_SERIAL;
+    extern bool LOG_TO_FILE;
 
     bool initFS();
     bool logger(String stuff);
