@@ -6,7 +6,6 @@
 
 #define DBG_OUTPUT_PORT Serial
 #define VERSION 0.1
-//#define LOG_TO_FILE false
 #define LOG_FILE "/log.txt"
 #define CURRENT_LOG_FILE "/current_log.txt"
 
