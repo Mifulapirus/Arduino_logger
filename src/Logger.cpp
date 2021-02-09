@@ -6,18 +6,21 @@
 
 #define DBG_OUTPUT_PORT Serial
 #define VERSION 0.1
-#define LOG_TO_FILE true
+//#define LOG_TO_FILE false
 #define LOG_FILE "/log.txt"
 #define CURRENT_LOG_FILE "/current_log.txt"
 
 bool _debug = true;
+bool LOG_TO_SERIAL = true;
+bool LOG_TO_FILE = false;
+
 bool initFS() {
   if (SPIFFS.begin()) return true;
   else return false;
 }
 
 bool initLogger(bool debug) {
-  _debug = debug;
+  LOG_TO_SERIAL = debug;
   return initFS();
 } 
 
@@ -26,7 +29,6 @@ void printLogPaths(){
     DBG_OUTPUT_PORT.println("Log file: " + String(LOG_FILE));
     DBG_OUTPUT_PORT.println("Current Log file: " + String(CURRENT_LOG_FILE));
   }
-
   else DBG_OUTPUT_PORT.println("Logging to file is Disabled");
 }
 
@@ -36,7 +38,7 @@ void printLogPaths(){
  * @return void
  ***************************/
 bool logger(String data){
- if(_debug){
+ if(LOG_TO_SERIAL){
     //Print data via Serial port
     DBG_OUTPUT_PORT.println(String(millis()) + "  " + data);
     
