@@ -10,9 +10,6 @@
 #define LOG_FILE "/log.txt"
 #define CURRENT_LOG_FILE "/current_log.txt"
 
-LOG_TO_SERIAL = true;
-LOG_TO_FILE = false;
-
 bool initFS() {
   if (SPIFFS.begin()) return true;
   else return false;
