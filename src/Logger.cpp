@@ -82,7 +82,7 @@ bool logger(String data){
  * @return void
  ***************************/
 bool logger(String data, int _logLevel){
-  if(_logLevel >= logLevel) return logger(data);
+  if(logLevel >= _logLevel) return logger(data);
   else return false;
 }
 
