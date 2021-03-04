@@ -11,6 +11,7 @@
 
 extern bool LOG_TO_SERIAL = true;
 extern bool LOG_TO_FILE = false;
+int logLevel = LOG_ALL;
 
 bool initFS() {
   if (SPIFFS.begin()) return true;
@@ -18,7 +19,12 @@ bool initFS() {
 }
 
 bool initLogger(bool debug) {
+  return initLogger(debug, LOG_ALL);
+} 
+
+bool initLogger(bool debug, int setLogLevel) {
   LOG_TO_SERIAL = debug;
+  logLevel = setLogLevel;
   return initFS();
 } 
 
@@ -67,6 +73,17 @@ bool logger(String data){
     return true;
   }
   else return true;
+}
+
+/***************************
+ * Serial logging helper with appropriate dating. It could also log to files and perform some other logging tasks
+ * @param data String to be logged. Current date will be added automatically
+ * @param logLevel 0=Debug - 4=Force Log 
+ * @return void
+ ***************************/
+bool logger(String data, int _logLevel){
+  if(_logLevel >= logLevel) return logger(data);
+  else return false;
 }
 
 String clearCurrentLogFile() {
