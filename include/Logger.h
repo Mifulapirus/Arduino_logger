@@ -3,7 +3,7 @@
 
     #include <Arduino.h>
     #include <FS.h>
-    #include <SPIFFS.h>
+    //#include <SPIFFS.h>
 
     #define LOG_ALL             4
     #define LOG_WARNING         3
