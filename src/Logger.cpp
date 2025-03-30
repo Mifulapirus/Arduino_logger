@@ -1,5 +1,6 @@
 #include <logger.h>
 #ifndef SPIFFS
+  #include <SPIFFS.h>
   #include <FS.h>
 #endif // !SPIFFS
 
