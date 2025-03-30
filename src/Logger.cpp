@@ -9,8 +9,8 @@
 #define LOG_FILE "/log.txt"
 #define CURRENT_LOG_FILE "/current_log.txt"
 
-extern bool LOG_TO_SERIAL = true;
-extern bool LOG_TO_FILE = false;
+bool LOG_TO_SERIAL = true;
+bool LOG_TO_FILE = false;
 int logLevel = LOG_ALL;
 
 bool initFS() {
