@@ -12,7 +12,7 @@ bool LOG_TO_FILE = false;
 int logLevel = LOG_ALL;
 
 bool initFS() {
-  if (SPIFFS.begin()) return true;
+  if (LittleFS.begin()) return true;
   else return false;
 }
 
@@ -46,8 +46,8 @@ bool logger(String data){
     
     if (LOG_TO_FILE) {
       //Open log files
-      File logFile = SPIFFS.open(LOG_FILE, "a");
-      File currentLogFile = SPIFFS.open(CURRENT_LOG_FILE, "a");
+      File logFile = LittleFS.open(LOG_FILE, "a");
+      File currentLogFile = LittleFS.open(CURRENT_LOG_FILE, "a");
       if (!logFile || !currentLogFile) {
         DBG_OUTPUT_PORT.println("Error opening log files");
         return false;
@@ -85,7 +85,7 @@ bool logger(String data, int _logLevel){
 }
 
 String clearCurrentLogFile() {
-  File currentLogFile = SPIFFS.open(CURRENT_LOG_FILE, "w+");
+  File currentLogFile = LittleFS.open(CURRENT_LOG_FILE, "w+");
   
   if (!currentLogFile) {
     DBG_OUTPUT_PORT.println("Error opening Current Log File to clear");

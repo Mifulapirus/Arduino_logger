@@ -2,7 +2,7 @@
     #define LOGGER_H
 
     #include <Arduino.h>
-    #include <FS.h>
+    #include <LittleFS.h>
     //#include <SPIFFS.h>
 
     #define LOG_ALL             4
